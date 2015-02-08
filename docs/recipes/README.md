@@ -11,8 +11,8 @@
 The recipe should be up-to-date as much as possible. If you haven't already, clone the generator and link it:
 
 ```sh
-$ git clone https://github.com/yeoman/generator-webapp
-$ cd generator-webapp
+$ git clone https://github.com/yeoman/generator-webapp-heroku
+$ cd generator-webapp-heroku
 $ npm link
 $ cd ../
 ```
@@ -20,16 +20,16 @@ $ cd ../
 Now the `yo webapp` command will use that version of the generator. To make sure this is actually true:
 
 ```sh
-$ npm ls -g generator-webapp
+$ npm ls -g generator-webapp-heroku
 # you should get something like
 /usr/local/lib
-└── generator-webapp@0.1.0  -> /Users/username/generator-webapp
+└── generator-webapp-heroku@0.1.0  -> /Users/username/generator-webapp-heroku
 ```
 
 To update the generator, all you need to do is:
 
 ```sh
-$ cd generator-webapp
+$ cd generator-webapp-heroku
 $ git pull origin master
 $ npm install
 $ cd ../
