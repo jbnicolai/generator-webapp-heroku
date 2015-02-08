@@ -67,7 +67,7 @@ module.exports = function (grunt) {
                 if (useAuth) {
                     var userName = 'test';
                     var password = 'password1';
-                    fs.writeSync(fd, 'app.use(express.basicAuth(' + userName + ', ' + password + '));\n');
+                    fs.writeSync(fd, 'app.use(express.basicAuth("' + userName + '", "' + password + '"));\n');
                 }
                 fs.writeSync(fd, 'app.use(express.static(__dirname));\n');
                 fs.writeSync(fd, 'app.get("/", function(req, res){\n');
@@ -220,10 +220,10 @@ module.exports = function (grunt) {
             '<%%= config.dist %>/*',
             '!<%%= config.dist %>/.git*',
             //Heroku Settings
-            '!<%= config.dist %>/Procfile',
-            '!<%= config.dist %>/package.json',
-            '!<%= config.dist %>/server.js',
-            '!<%= config.dist %>/.gitignore'            
+            '!<%%= config.dist %>/Procfile',
+            '!<%%= config.dist %>/package.json',
+            '!<%%= config.dist %>/server.js',
+            '!<%%= config.dist %>/.gitignore'            
           ]
         }]
       },
@@ -606,6 +606,7 @@ module.exports = function (grunt) {
           ]);
       } else if (target === 'push') {
           grunt.task.run([
+              'file-creator:heroku',
               'shell:heroku-git-push'
           ]);
       } else {
