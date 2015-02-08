@@ -1,6 +1,8 @@
 # Web app generator [![Build Status](https://secure.travis-ci.org/yeoman/generator-webapp.svg?branch=master)](http://travis-ci.org/yeoman/generator-webapp)
 
-[Yeoman](http://yeoman.io) generator that scaffolds out a front-end web app.
+[Yeoman](http://yeoman.io) generator that scaffolds out a front-end web app, creates a Heroku app, and provides easy publishing to Heroku. 
+
+Note: The only changes between this and webapp is that there are some additional grunt commands that will create and provision a Heroku app, generate Heroku specific files, and commit to Heroku. For more information, check out [Easily Deploy a Yeoman App to Heroku](http://johnlivingston.io/blog/yeoman-heroku)
 
 ![](http://i.imgur.com/uKTT2Hj.png)
 
@@ -15,6 +17,8 @@
 * Mocha Unit Testing with PhantomJS
 * Bootstrap for Sass (Optional)
 * Leaner Modernizr builds (Optional)
+* Creates and provision Heroku App (The name is based on the name in package.json. Any characters that are not alpha-numeric are removed.)
+* Commits to Heroku
 
 For more information on what `generator-webapp` can do for you, take a look at the [Grunt tasks](https://github.com/yeoman/generator-webapp/blob/master/app/templates/_package.json) used in our `package.json`.
 
@@ -24,6 +28,8 @@ For more information on what `generator-webapp` can do for you, take a look at t
 - Install: `npm install -g generator-webapp`
 - Run: `yo webapp-heroku`
 - Run `grunt` for building and `grunt serve` for preview[\*](#grunt-serve-note). `--allow-remote` option for remote access.
+- After running 'grunt', run 'grunt heroku:init' to create a Heroku web app and do an initial commit. This only needs to be run once.
+- For subsequent deploys to Heroku use 'grunt heroku:deploy --gitm="This is a git commit message"'
 
 
 #### Third-Party Dependencies
