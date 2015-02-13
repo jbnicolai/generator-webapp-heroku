@@ -187,6 +187,9 @@ module.exports = yeoman.generators.Base.extend({
     } else {
       this.copy('main.js', 'app/scripts/main.js');
     }
+
+    //Heroku Settings
+    this.mkdir('heroku');
   },
 
   install: function () {

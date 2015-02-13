@@ -1,6 +1,9 @@
 Description:
     Creates a new basic front-end web application.
 
+	Note: The only changes between this and the webapp generator is that there are some additional grunt commands that will create and provision a Heroku app, generate Heroku specific files, and commit to Heroku. For more information, check out Rapidly Deploy a Yeoman App to Heroku 
+	http://johnlivingston.io/blog/yeoman-heroku   
+
 Options:
     Bootstrap: Include Bootstrap for Sass
 
