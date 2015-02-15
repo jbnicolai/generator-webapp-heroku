@@ -1,8 +1,8 @@
 # Web app generator [![Build Status](https://secure.travis-ci.org/yeoman/generator-webapp.svg?branch=master)](http://travis-ci.org/yeoman/generator-webapp)
 
-[Yeoman](http://yeoman.io) generator that scaffolds out a front-end web app, creates a Heroku app, and provides easy publishing to Heroku. 
+[Yeoman](http://yeoman.io) generator that scaffolds out a front-end web app, and provides an easy way to create and publish to Heroku. 
 
-Note: The only changes between this and webapp is that there are some additional grunt commands that will create and provision a Heroku app, generate Heroku specific files, and commit to Heroku. For more information, check out [Easily Deploy a Yeoman App to Heroku](http://johnlivingston.io/blog/yeoman-heroku)
+Note: The only changes between this and generator-webapp (v 0.11.1) are some additional grunt commands that will create and provision a Heroku app, generate Heroku specific files, and commit to Heroku. For more information, check out [Easily Deploy a Yeoman App to Heroku](http://johnlivingston.io/blog/yeoman-heroku).
 
 ![](http://i.imgur.com/uKTT2Hj.png)
 
@@ -29,11 +29,11 @@ For more information on what `generator-webapp` can do for you, take a look at t
 - Run: `yo webapp-heroku`
 - Run `grunt` for building and `grunt serve` for preview[\*](#grunt-serve-note). `--allow-remote` option for remote access.
 
-Heroku Integration
+## Heroku Integration
 - After running 'grunt', run 'grunt heroku:init' to create a Heroku web app and do an initial commit. This only needs to be run once.
 - For subsequent deploys to Heroku use 'grunt heroku:push --gitm="This is a git commit message"'
-- By default, the minified version will be deployed, but for the unminifed version, speficy using the --min argument. For example: grunt heroku:push --min=true --gitm="new update"
-
+- By default, the minified version will be deployed, but for the unminifed version, speficy using the --min argument. For example: grunt heroku:push --min=true --gitm="new update". 
+- VERY IMPORTANT: Currently there is a [bug related to CDNIFY](https://github.com/yeoman/generator-angular/issues/955) on the core project that prevents the minimized source file references from being updated properly in the dist/index.html folder. Until this is fixed, there is a workaround. Open app/index.html and scroll to the bottom. You will notice that the indentation for scripts/main.js is not the same as the scripts/plugins.js above it. Ensure that all of these lines including the comments are on the same line. You can then run a grunt build from the command line before deploying again.
 
 #### Third-Party Dependencies
 
