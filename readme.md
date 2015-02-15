@@ -25,7 +25,7 @@ For more information on what `generator-webapp` can do for you, take a look at t
 
 ## Getting Started
 
-- Install: `npm install -g generator-webapp`
+- Install: `npm install -g generator-webapp-heroku`
 - Run: `yo webapp-heroku`
 - Run `grunt` for building and `grunt serve` for preview[\*](#grunt-serve-note). `--allow-remote` option for remote access.
 
@@ -86,7 +86,7 @@ See the [contributing docs](https://github.com/yeoman/yeoman/blob/master/contrib
 
 Note: We are regularly asked whether we can add or take away features. If a change is good enough to have a positive impact on all users, we are happy to consider it.
 
-If not, `generator-webapp` is fork-friendly and you can always maintain a custom version which you `npm install && npm link` to continue using via `yo webapp-heroku` or a name of your choosing.
+If not, `generator-webapp-heroku` is fork-friendly and you can always maintain a custom version which you `npm install && npm link` to continue using via `yo webapp-heroku` or a name of your choosing.
 
 
 ## License
